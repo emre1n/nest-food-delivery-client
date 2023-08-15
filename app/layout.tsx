@@ -1,6 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { roboto, robotoSlab } from './fonts';
+import Footer from '@/components/layout/Footer';
+import Navbar from '@/components/layout/Navbar/Navbar';
 
 export const metadata: Metadata = {
   title: 'Food Delivery',
@@ -15,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${roboto.variable} ${robotoSlab.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+        <Footer copyrightText="Restaurant Delivery" />
+      </body>
     </html>
   );
 }
