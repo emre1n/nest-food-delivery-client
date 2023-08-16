@@ -8,7 +8,7 @@ const URL = process.env.NEST_API_URL
 
 export const getCategories = async (): Promise<Category[]> => {
   try {
-    const res = await fetch(URL);
+    const res = await fetch(URL, { cache: 'no-store' });
     if (!res.ok) throw new Error('Request failed');
 
     const data: Category[] = await res.json();
