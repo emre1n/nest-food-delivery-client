@@ -20,3 +20,9 @@ export interface Category {
   deleted: boolean;
   name: string;
 }
+
+export interface Billboard {
+  title: string;
+  subtitle: string;
+  imageUrl: string;
+}
