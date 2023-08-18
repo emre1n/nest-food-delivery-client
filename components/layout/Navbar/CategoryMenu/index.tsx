@@ -16,11 +16,11 @@ interface LinkCategory {
   isDeleted: boolean;
 }
 
-interface NavbarMenuProps {
+interface CategoryMenuProps {
   data: Category[];
 }
 
-const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
+const CategoryMenu: React.FC<CategoryMenuProps> = ({ data }) => {
   const pathname = usePathname();
 
   const categories = data.map((category: Category) => ({
@@ -34,7 +34,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
   const sortedCategories = categories.slice().sort((a, b) => a.id - b.id);
 
   return (
-    <nav className="mx-6 flex items-center gap-x-4 leg:gap-x-6">
+    <nav className="mx-6 flex items-center gap-x-4 lg:gap-x-6">
       {sortedCategories.map(
         (category: LinkCategory) =>
           !category.isDeleted && (
@@ -42,7 +42,7 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
               key={category.href}
               href={category.href}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-primary',
+                'text-sm font-medium hover:text-primary border-b border-b-white hover:border-b-primary transition-colors',
                 category.active ? 'text-primary' : 'text-neutral-500'
               )}
             >
@@ -54,4 +54,4 @@ const NavbarMenu: React.FC<NavbarMenuProps> = ({ data }) => {
   );
 };
 
-export default NavbarMenu;
+export default CategoryMenu;
