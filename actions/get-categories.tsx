@@ -1,7 +1,7 @@
 import { Category } from '@/lib/types';
 
 const URL = process.env.NEST_API_URL
-  ? `${process.env.NEST_API_URL}/categories`
+  ? `${process.env.NEST_API_URL}/category`
   : (() => {
       throw new Error('ENV variable not set');
     })();
