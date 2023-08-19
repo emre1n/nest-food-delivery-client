@@ -22,6 +22,7 @@ export interface Category {
 }
 
 export interface Billboard {
+  id: number;
   title: string;
   subtitle: string;
   imageUrl: string;
