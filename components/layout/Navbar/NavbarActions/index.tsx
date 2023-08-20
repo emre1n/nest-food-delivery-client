@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Button from '@/components/ui/Button';
-import { BsBasket3 } from 'react-icons/bs';
+import { BsCart3 } from 'react-icons/bs';
 
 const NavbarActions = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -17,9 +17,12 @@ const NavbarActions = () => {
 
   return (
     <div className="flex items-center gap-x-4">
-      <Button className="flex items-center rounded-full bg-green px-4 py-2 transition-opacity">
-        <BsBasket3 size={20} />
-        <span className="ml-2 text-sm font-medium text-white">0</span>
+      <Button className="relative flex items-center rounded-full text-purple bg-secondary-bg px-4 py-2 transition-opacity">
+        <span className="absolute top-0 right-2 flex justify-center items-center bg-green w-[22px] h-[22px] text-white text-[10px] rounded-[50%]">
+          1
+        </span>
+        <span className="mr-2 text-sm font-medium text-green">€1,99</span>
+        <BsCart3 size={30}></BsCart3>
       </Button>
     </div>
   );

@@ -1,4 +1,4 @@
-export interface Meal {
+export interface MenuItem {
   id: number;
   createdAt: Date;
   updatedAt: Date;
