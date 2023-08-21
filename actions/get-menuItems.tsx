@@ -1,3 +1,5 @@
+import qs from 'query-string';
+
 import { MenuItem } from '@/lib/types';
 
 const URL = process.env.NEST_API_URL
@@ -6,9 +8,21 @@ const URL = process.env.NEST_API_URL
       throw new Error('ENV variable not set');
     })();
 
-export const getMenuItems = async (): Promise<MenuItem[]> => {
+interface Query {
+  categoryId?: number;
+  isFeatured?: boolean;
+}
+
+export const getMenuItems = async (query: Query): Promise<MenuItem[]> => {
   try {
-    const res = await fetch(URL, { cache: 'no-store' });
+    const url = qs.stringifyUrl({
+      url: URL,
+      query: {
+        categoryId: query.categoryId,
+        isFeatured: query.isFeatured,
+      },
+    });
+    const res = await fetch(url, { cache: 'no-store' });
     if (!res.ok) throw new Error('Request failed');
 
     const data: MenuItem[] = await res.json();
