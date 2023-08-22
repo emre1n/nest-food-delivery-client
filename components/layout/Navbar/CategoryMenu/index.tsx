@@ -43,7 +43,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ data }) => {
               href={category.href}
               className={cn(
                 'text-sm font-medium hover:text-primary border-b border-b-white hover:border-b-primary transition-colors',
-                category.active ? 'text-primary' : 'text-neutral-500'
+                category.active ? 'text-primary' : 'text-secondary'
               )}
             >
               {category.label}
