@@ -7,7 +7,7 @@ export interface MenuItem {
   name: string;
   description: string | null;
   price: number;
-  image: string | null;
+  image: string;
 
   categoryId: number;
   category: Category;
