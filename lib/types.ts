@@ -1,3 +1,9 @@
+enum Currency {
+  USD,
+  EUR,
+  TRY,
+}
+
 export interface MenuItem {
   id: number;
   createdAt: Date;
@@ -8,6 +14,7 @@ export interface MenuItem {
   description: string | null;
   price: number;
   image: string;
+  currency: Currency;
 
   categoryId: number;
   category: Category;
