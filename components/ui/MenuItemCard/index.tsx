@@ -34,7 +34,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
         </div>
         <div className="flex flex-col items-start justify-center w-full pt-2">
           <p className="pb-2">{data.name}</p>
-          <p className="pb-4 text-purple">€{data.price}</p>
+          <p className="pb-4 text-purple">
+            {data.currency} {data.price}
+          </p>
           <button className="flex justify-center items-center w-full h-10 bg-orange text-white rounded-lg">
             <BiSolidCart size={20} />
           </button>
