@@ -1,7 +1,7 @@
-export enum Currency {
-  USD = 'USD',
-  EUR = 'EUR',
-  TRY = 'TRY',
+enum Currency {
+  USD,
+  EUR,
+  TRY,
 }
 
 export interface MenuItem {
