@@ -6,6 +6,7 @@ import React from 'react';
 import IconButton from '../IconButton';
 import { BsArrowsAngleExpand } from 'react-icons/bs';
 import { BiSolidCart } from 'react-icons/bi';
+import CurrencyDisplay from '../CurrencyDisplay';
 
 interface MenuItemCardProps {
   data: MenuItem;
@@ -33,10 +34,13 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
           </div>
         </div>
         <div className="flex flex-col items-start justify-center w-full pt-2">
-          <p className="pb-2">{data.name}</p>
-          <p className="pb-4 text-purple">
-            {data.currency} {data.price}
-          </p>
+          <p className="pb-2 font-semibold text-lg">{data.name}</p>
+          <div className="flex items-center justify-between pb-4 text-purple">
+            <CurrencyDisplay
+              value={data?.price}
+              currencyCode={data?.currency}
+            />
+          </div>
           <button className="flex justify-center items-center w-full h-10 bg-orange text-white rounded-lg">
             <BiSolidCart size={20} />
           </button>
