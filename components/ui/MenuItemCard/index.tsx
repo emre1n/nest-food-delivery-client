@@ -7,14 +7,24 @@ import IconButton from '../IconButton';
 import { BsArrowsAngleExpand } from 'react-icons/bs';
 import { BiSolidCart } from 'react-icons/bi';
 import CurrencyDisplay from '../CurrencyDisplay';
+import { useRouter } from 'next/navigation';
 
 interface MenuItemCardProps {
   data: MenuItem;
 }
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/item/${data?.id}`);
+  };
+
   return (
-    <div className="group p-3 space-y-4 bg-white border rounded-xl cursor-pointer">
+    <div
+      onClick={handleClick}
+      className="group p-3 space-y-4 bg-white border rounded-xl cursor-pointer"
+    >
       <div className="aspect-square rounded-xl relative">
         <Image
           className="aspect-square object-cover rounded-xl bg-element-bg"
