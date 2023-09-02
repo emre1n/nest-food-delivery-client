@@ -21,13 +21,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
   };
 
   return (
-    <div
-      onClick={handleClick}
-      className="group p-3 space-y-4 bg-white border rounded-xl cursor-pointer"
-    >
+    <div className="group p-3 space-y-4 bg-white border rounded-xl">
       <div className="aspect-square rounded-xl relative">
         <Image
-          className="aspect-square object-cover rounded-xl bg-element-bg"
+          onClick={handleClick}
+          className="aspect-square object-cover rounded-xl bg-element-bg cursor-pointer"
           src={data?.image}
           alt={data.name}
           width={500}
