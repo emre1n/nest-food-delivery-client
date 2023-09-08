@@ -24,7 +24,7 @@ const CurrencyDisplay: React.FC<CurrencyDisplayProps> = ({
   }
 
   const formattedCurrency = formatCurrency(value, currencyCode);
-  return <div className="font-semibold">{formattedCurrency}</div>;
+  return <span className="font-semibold">{formattedCurrency}</span>;
 };
 
 export default CurrencyDisplay;

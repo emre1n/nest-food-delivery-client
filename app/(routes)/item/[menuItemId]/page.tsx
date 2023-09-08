@@ -4,7 +4,8 @@ import Container from '@/components/ui/Container';
 import React from 'react';
 import { MenuItem } from '../../../../lib/types';
 import Featured from '@/components/home/Featured';
-import Gallery from '@/components/gallery/Gallery';
+import Gallery from '@/components/item/Gallery';
+import Info from '@/components/item/Info';
 
 interface MenuItemPageProps {
   params: {
@@ -24,10 +25,12 @@ async function MenuItemPage({
   return (
     <div className="bg-white">
       <Container className="space-y-10 pb-10">
-        <div className="px-4 py-10 sm:px-6 lg:px-8">
+        <div className="px-4 py-8 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
             <Gallery image={menuItem.image} />
-            <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">Info</div>
+            <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+              <Info data={menuItem} />
+            </div>
           </div>
         </div>
         <hr className="my-10" />

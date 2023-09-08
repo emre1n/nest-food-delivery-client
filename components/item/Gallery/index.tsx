@@ -7,13 +7,13 @@ interface GalleryProps {
 
 const Gallery: React.FC<GalleryProps> = ({ image }) => {
   return (
-    <div className="w-[400px] h-[400px] flex justify-center items-center overflow-hidden rounded-xl">
+    <div className="w-[360px] h-[360px] flex justify-center items-center overflow-hidden rounded-xl">
       <div className="aspect-square rounded-xl relative">
         <Image
           className="bg-center"
           src={image}
           alt="meal"
-          width={400}
+          width={360}
           height={800}
         />
       </div>

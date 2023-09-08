@@ -8,6 +8,7 @@ import { BsArrowsAngleExpand } from 'react-icons/bs';
 import { BiSolidCart } from 'react-icons/bi';
 import CurrencyDisplay from '../CurrencyDisplay';
 import { useRouter } from 'next/navigation';
+import Button from '../Button';
 
 interface MenuItemCardProps {
   data: MenuItem;
@@ -49,9 +50,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
               currencyCode={data?.currency}
             />
           </div>
-          <button className="flex justify-center items-center w-full h-10 bg-orange text-white rounded-lg">
+          <Button className="flex justify-center items-center w-full h-10 bg-orange text-white rounded-lg">
             <BiSolidCart size={20} />
-          </button>
+          </Button>
         </div>
       </div>
     </div>
