@@ -25,10 +25,12 @@ async function MenuItemPage({
   return (
     <div className="bg-white">
       <Container className="space-y-10 pb-10">
-        <div className="px-4 py-8 sm:px-6 lg:px-8">
+        <div className="px-4 py-8 sm:pt-16 sm:pb-8 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-            <Gallery image={menuItem.image} />
-            <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+            <div className="flex justify-center">
+              <Gallery image={menuItem.image} />
+            </div>
+            <div className="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0 h-full">
               <Info data={menuItem} />
             </div>
           </div>
