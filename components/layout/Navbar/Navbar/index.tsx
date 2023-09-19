@@ -20,7 +20,7 @@ const Navbar = async () => {
           </div>
         </Container>
       </div>
-      <Container className="flex justify-center items-center pt-4 bg-white">
+      <Container className="flex justify-center items-center py-4 bg-white">
         <CategoryMenu data={categories} />
       </Container>
     </>

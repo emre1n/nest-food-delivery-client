@@ -7,7 +7,7 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ copyrightText }) => {
   return (
     <footer className="bg-secondary-bg">
-      <div className="mx-auto py-10">
+      <div className="mx-auto py-10 mt-10">
         <p className="text-center text-xs text-primary">
           {copyrightText} &copy; {new Date().getFullYear()}
         </p>

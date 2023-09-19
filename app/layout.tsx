@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" className={`${roboto.variable} ${robotoSlab.variable}`}>
       <body>
         <Navbar />
-        {children}
+        <main className="flex flex-col content-container">{children}</main>
         <Footer copyrightText="Restaurant Delivery" />
       </body>
     </html>

@@ -17,5 +17,5 @@ h1 {
 }
 
 .content-container {
-  min-height: calc(100vh - 160px - 53px - 16px);
+  min-height: calc(100vh - 160px - 53px - 40px);
 }
