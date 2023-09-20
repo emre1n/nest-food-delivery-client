@@ -2,23 +2,31 @@
 
 import { MenuItem } from '@/lib/types';
 import Image from 'next/image';
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import IconButton from '../IconButton';
 import { BsArrowsAngleExpand } from 'react-icons/bs';
 import { BiSolidCart } from 'react-icons/bi';
 import CurrencyDisplay from '../CurrencyDisplay';
 import { useRouter } from 'next/navigation';
 import Button from '../Button';
+import usePreviewModal from '@/hooks/use-preview-modal';
 
 interface MenuItemCardProps {
   data: MenuItem;
 }
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
+  const previewModal = usePreviewModal();
   const router = useRouter();
 
   const handleClick = () => {
     router.push(`/item/${data?.id}`);
+  };
+
+  const onPreview: MouseEventHandler<HTMLButtonElement> = event => {
+    event.stopPropagation();
+
+    previewModal.onOpen(data);
   };
 
   return (
@@ -35,7 +43,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ data }) => {
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-36">
           <div className="flex gap-x-6 justify-center">
             <IconButton
-              onClick={() => {}}
+              onClick={onPreview}
               icon={
                 <BsArrowsAngleExpand size={20} className="text-secondary" />
               }
